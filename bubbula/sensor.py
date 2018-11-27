@@ -32,15 +32,6 @@ class Sensor(object):
         self.quantity = quantity
         self.unit = unit
 
-
-    def is_available(self):
-        """
-
-        :return: True if sensor is available
-        """
-        print("Sensor::is_available() not implemented in sub-class")
-        return False
-
     def read(self):
         """
 
@@ -58,9 +49,6 @@ class RandomSensor(Sensor):
 
     def __init__(self, name):
         Sensor.__init__(self, name, "Random")
-
-    def is_available(self):
-        return True
 
     def read(self):
         return random.random()

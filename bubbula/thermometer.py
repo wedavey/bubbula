@@ -15,6 +15,7 @@ __license__ = "MIT https://opensource.org/licenses/MIT"
 # standard imports
 
 # third party imports
+from w1thermsensor import W1ThermSensor
 
 # local imports
 from bubbula.sensor import Sensor
@@ -26,24 +27,16 @@ class Thermometer(Sensor):
 
     """
     def __init__(self, name, serial):
-        Sensor.__init__(name, "Temperature", "Celcius")
-        self.available = False
-        self.connect()
-
-    def connect(self):
-        try:
-
-
-    def is_available(self):
-        return self.available
+        Sensor.__init__(self, name, "Temperature", "Celcius")
+        self.serial = serial
+        self.thermometer = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, serial)
 
     def read(self):
         """
 
         :return:
         """
-
-
+        return self.thermometer.get_temperature()
 
 
 # EOF
