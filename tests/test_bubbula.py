@@ -6,7 +6,7 @@
 
 import unittest
 
-from bubbula import bubbula
+from bubbula import app
 
 
 class TestBubbula(unittest.TestCase):
