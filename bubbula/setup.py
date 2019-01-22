@@ -23,9 +23,11 @@ import RPi.GPIO as GPIO
 
 
 def setup():
+    print("initializing GPIO pins")
     GPIO.setmode(GPIO.BCM)
 
 def cleanup():
+    print("finalizing GPIO pins")
     GPIO.cleanup()
 
 

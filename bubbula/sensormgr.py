@@ -12,7 +12,8 @@ __created__ = "2018-11-27"
 __copyright__ = "Copyright 2018 Will Davey"
 __license__ = "MIT https://opensource.org/licenses/MIT"
 
-# standard imports 
+# standard imports
+import os, yaml
 
 # third party imports
 
@@ -22,6 +23,14 @@ __license__ = "MIT https://opensource.org/licenses/MIT"
 
 
 # Your awesome code goes in here...
+class SensorManager(object):
+    def __init__(self, fname):
+        try:
+            with open(fname, 'r') as f:
+                self._config = yaml.load(f)
+        except:
+            self._config = dict()
+
 
 
 # EOF

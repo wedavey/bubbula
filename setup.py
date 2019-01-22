@@ -41,6 +41,7 @@ setup(
     keywords='bubbula',
     name='bubbula',
     packages=find_packages(include=['bubbula']),
+    scripts = ["bin/brew"],
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
